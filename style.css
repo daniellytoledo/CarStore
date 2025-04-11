@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-size: 16px;
+}
+
+header {
+    position: fixed;
+    width: 80vw;
+    left: 50%;
+    transform: translateX(-50%); /* a away of centralize the header/navbar perfectly */
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 600px; /* creating two columns; 1º one 1fr of the screen n the other one, 600px */
+    gap: 10%;
+
+    & img {     /* a different way of selectin what you wanna edit with the & img inside the header */
+        width: 250px;
+    }
+
+    & navbar {
+        & ul {
+            display: grid;
+            grid-template-columns: repeat(3, 200px);
+        }
+    }
+}
