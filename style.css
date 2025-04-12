@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     list-style: none;
+    font-family: "Special Gothic Expanded One", sans-serif;
 }
 
 body {
@@ -52,26 +53,31 @@ section {
 
             & .car-img {
                 position: absolute;
-                top: 50%;
-                transform: translateY(-50%); /* translateY centralize in vertical */
+                top: 49%;
+                transform: translateY(-55%); /* translateY centralize in vertical */
                 width: 70%;
 
             & img {
-                width: 100%;
-                transform: rotate(-15deg);
+                width: 95%;
+                transform: rotate(-14deg);
             }
             }
 
             & .content {
                 position: absolute;
-                right: 100px;
+                right: 50px;
                 width: 70%;
                 height: 100%;
                 display: flex;
                 flex-direction: column;
-                justify-content: end; /* putting the text at the end */
+                justify-content: center; /*  */
                 align-items: end; /* placing the text on the right */
                 gap: 10px;
+                font-family: "Special Gothic", sans-serif;
+
+                & .car-brand {
+                    font-size: 120px;
+                }
 
                 & .car-name {
                     font-weight: bold;
@@ -84,9 +90,11 @@ section {
 
                 & .description {
                     color: #e2dfdf;
-                    font-size: 16px;
-                    text-align: right;
-                    max-width: 400px;
+                    font-size: 15px;
+                    text-align: left;
+                    max-width: 300px;
+                    font-family: "Poppins", sans-serif;
+                    font-weight: 500;
                 }
 
                 & .button-contact {
@@ -155,12 +163,49 @@ section {
                 }
             }
         }
+
+        &::before {
+            content: "";
+            position: absolute;
+            height: 200px;
+            width: 100%;
+            top: 50%;
+            border-top: 1px solid #fff;
+        }
     }
 
     .arrows {
-        & button {
+
+        width: 70vw;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -25px);
+        display: flex;
+        justify-content: space-between;
+
+        & button:nth-child(1) { /* there's 2 button inside the arrows html, so with this we can choose which one we want */
             & img {
-                width: 100px;
+                transform: scale(-1); /* inverted the img(arrow) */
+            }
+
+        }
+
+        & button {
+            top: 60%;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            & img {
+                width: 30px;
+                margin-top: 4px;
+                cursor: pointer;
+            }
+
+            &:hover {
+                background-color: #febb13;
             }
         }
     }
@@ -170,7 +215,7 @@ section {
         top: 50%;
         left: 50%;
         transform: translateX(-50%);
-        height: 200px;
+        height: 220px;
         width: 90vw;
         display: flex;
         flex-direction: column;
@@ -178,7 +223,7 @@ section {
         gap: 15px;
         
         & .number {
-            font-size: 5em;
+            font-size: 3.5em;
         }
 
         & ul {
