@@ -90,6 +90,8 @@ section {
                 }
 
                 & .button-contact {
+                    position: relative;
+                    z-index: 1;
                     border-radius: 30px;
                     height: 35px; /* altura */
                     width: 100px; /* largura */
@@ -98,6 +100,57 @@ section {
                     background-color: #751816;
                     color: #febb13;
                     cursor: pointer;
+                    font-weight: bold;
+                }
+
+                & .button-contact::before {
+                    content: "";
+                    position: absolute;
+                    top: -3px;
+                    left: -3px;
+                    right: -3px;
+                    bottom: -3px;
+                    background-size: 400%;
+                    background: linear-gradient(
+                        45deg,
+                        #370617, #6A040F, #D00000, #DC2F02,
+                        #E85D04, #F48C06, #FAA307, #FFBA08
+                    );
+                    z-index: -1;
+                    filter: blur(8px);
+                    animation: gradientAnimation 8s linear infinite;
+                    transition: opacity .3s ease-in-out;
+                    border-radius: 35px;
+                    opacity: 0.8;
+                    box-shadow: 0 0 10px rgba(250, 163, 7, 0.8);
+                }
+
+                & .button-contact::after {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    width: 100px;
+                    height: 35px;
+                    background: rgba(255, 255, 255, 0.1);
+                    z-index: -1;
+                    border-radius: 30px;
+                }
+                @keyframes gradientAnimation {
+                    0% { background-position: 0% 50%; }
+                    50% { background-position: 100% 50%; }
+                    100% { background-position: 0% 50%; }
+                }
+
+                &  .button-contact:hover::before {
+                    opacity: 1;
+                }
+                & .button-contact:active:after {
+                    background: transparent;
+                }
+                & .button-contact:active {
+                    color: #000;
                     font-weight: bold;
                 }
             }
