@@ -1,3 +1,9 @@
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+} 
+
 * {
     margin: 0;
     padding: 0;
@@ -104,36 +110,13 @@ section {
                     height: 35px; /* altura */
                     width: 100px; /* largura */
                     text-transform: uppercase;
-                    border: 2px solid #febb13;
                     background-color: #751816;
                     color: #febb13;
                     cursor: pointer;
                     font-weight: bold;
-                }
+                }      
 
-                & .button-contact::before {
-                    content: "";
-                    position: absolute;
-                    top: -3px;
-                    left: -3px;
-                    right: -3px;
-                    bottom: -3px;
-                    background-size: 400%;
-                    background: linear-gradient(
-                        45deg,
-                        #370617, #6A040F, #D00000, #DC2F02,
-                        #E85D04, #F48C06, #FAA307, #FFBA08
-                    );
-                    z-index: -1;
-                    filter: blur(8px);
-                    animation: gradientAnimation 8s linear infinite;
-                    transition: opacity .3s ease-in-out;
-                    border-radius: 35px;
-                    opacity: 0.8;
-                    box-shadow: 0 0 10px rgba(250, 163, 7, 0.8);
-                }
-
-                & .button-contact::after {
+                & .button-contact::after, .button-contact::before {
                     content: "";
                     position: absolute;
                     top: 0;
@@ -141,36 +124,27 @@ section {
                     right: 0;
                     width: 100px;
                     height: 35px;
-                    background: rgba(255, 255, 255, 0.1);
-                    z-index: -1;
+                    background-image: conic-gradient(from var(--angle), #DC2F02, #E85D04, #F48C06, #FAA307, #DC2F02);
+                    z-index: -1; /* put the element behind the button */
+                    padding: 3px;
                     border-radius: 30px;
-                }
-                @keyframes gradientAnimation {
-                    0% { background-position: 0% 50%; }
-                    50% { background-position: 100% 50%; }
-                    100% { background-position: 0% 50%; }
+                    animation: 3s spin linear infinite;
                 }
 
-                &  .button-contact:hover::before {
-                    opacity: 1;
+                & .button-contact::before {
+                    filter: blur(1.5rem);
+                    opacity: 0.5;
                 }
-                & .button-contact:active:after {
-                    background: transparent;
-                }
-                & .button-contact:active {
-                    color: #000;
-                    font-weight: bold;
+
+                @keyframes spin {
+                    from {
+                        --angle: 0deg;
+                    }
+                    to {
+                        --angle: 360deg;
+                    }
                 }
             }
-        }
-
-        &::before {
-            content: "";
-            position: absolute;
-            height: 200px;
-            width: 100%;
-            top: 50%;
-            border-top: 1px solid #fff;
         }
     }
 
