@@ -87,6 +87,7 @@ section {
 
                 & .car-name {
                     font-weight: bold;
+                    font-size: 13px;
                 }
 
                 & h2 {
@@ -100,19 +101,17 @@ section {
                     text-align: right;
                     max-width: 400px;
                     font-family: "Poppins", sans-serif;
-                    font-weight: 500;
                 }
 
                 & .button-contact {
                     border-radius: 30px;
-                    height: 35px; /* altura */
-                    width: 100px; /* largura */
+                    height: 25px; /* altura */
+                    width: 80px; /* largura */
                     text-transform: uppercase;
-                    border: 1px solid #751816;
-                    background-color: #f6ba21;
-                    color: #000;
+                    border: 1px solid #ffd900;
+                    background-color: #febb13;
+                    color: #000000;
                     cursor: pointer;
-                    font-weight: bold;
                 }      
             }
         }
@@ -128,7 +127,6 @@ section {
     }
 
     .arrows {
-
         width: 70vw;
         position: absolute;
         top: 50%;
@@ -141,7 +139,6 @@ section {
             & img {
                 transform: scale(-1); /* inverted the img(arrow) */
             }
-
         }
 
         & button {
@@ -196,5 +193,42 @@ section {
             }
         }
     }
+}
 
+section {
+
+    & .list{
+        &.item {
+            transform: translateX(100vw);
+            transition: 0.5s;
+
+            & .car-img{
+                & img{
+                    transform: rotate(0);
+                    transition: 0.5s;
+                    transition-delay: 0.3s;
+                }
+            }
+            & .content{
+
+                & .car-name, .car-brand, .description, .button-contact{
+                    transform: translateX(200px);
+                    transition: 0.7s;
+                    transition-delay: 0.3s;
+                }
+
+                & .car-brand{
+                    transition-delay: 0.5s;
+                }
+
+                & .description{
+                    transition-delay: 0.7s;
+                }
+
+                & .button-contact{
+                    transition-delay: 0.9s;
+                }
+            }
+        }
+    }
 }
