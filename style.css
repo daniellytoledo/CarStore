@@ -65,7 +65,7 @@ section {
 
             & img {
                 width: 95%;
-                transform: rotate(-14deg);
+                transform: rotate(-20deg);
             }
             }
 
@@ -76,13 +76,13 @@ section {
                 height: 100%;
                 display: flex;
                 flex-direction: column;
-                justify-content: center; /*  */
+                justify-content: end; /* put the content in the end of the screen */
                 align-items: end; /* placing the text on the right */
-                gap: 10px;
+                gap: 20px;
                 font-family: "Special Gothic", sans-serif;
 
                 & .car-brand {
-                    font-size: 120px;
+                    font-size: 80px;
                 }
 
                 & .car-name {
@@ -95,55 +95,25 @@ section {
                 }
 
                 & .description {
-                    color: #e2dfdf;
-                    font-size: 15px;
-                    text-align: left;
-                    max-width: 300px;
+                    color: #d9d9d9;
+                    font-size: 12px;
+                    text-align: right;
+                    max-width: 400px;
                     font-family: "Poppins", sans-serif;
                     font-weight: 500;
                 }
 
                 & .button-contact {
-                    position: relative;
-                    z-index: 1;
                     border-radius: 30px;
                     height: 35px; /* altura */
                     width: 100px; /* largura */
                     text-transform: uppercase;
-                    background-color: #751816;
-                    color: #febb13;
+                    border: 1px solid #751816;
+                    background-color: #f6ba21;
+                    color: #000;
                     cursor: pointer;
                     font-weight: bold;
                 }      
-
-                & .button-contact::after, .button-contact::before {
-                    content: "";
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    width: 100px;
-                    height: 35px;
-                    background-image: conic-gradient(from var(--angle), #DC2F02, #E85D04, #F48C06, #FAA307, #DC2F02);
-                    z-index: -1; /* put the element behind the button */
-                    padding: 3px;
-                    border-radius: 30px;
-                    animation: 3s spin linear infinite;
-                }
-
-                & .button-contact::before {
-                    filter: blur(1.5rem);
-                    opacity: 0.5;
-                }
-
-                @keyframes spin {
-                    from {
-                        --angle: 0deg;
-                    }
-                    to {
-                        --angle: 360deg;
-                    }
-                }
             }
         }
     }
