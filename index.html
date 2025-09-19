@@ -23,15 +23,15 @@
         <img src="img/logo.png" alt="logo syd">
         <navbar>
             <ul>
-                <li>Home</li> <!-- talvez colocar um link direcionando para outra página -->
-                <li>Cars</li>
-                <li>Where are we?</li>
+                <li>Home</li> <!-- link? -->
+                <li>Cars</li> <!-- link? -->
+                <li>Where are we?</li> <!-- link? -->
             </ul>
         </navbar>
     </header>
-    <section>
+    <section class="container">
         <div class="list">
-            <div class="item">
+            <div class="item active"> <!-- first car -->
                 <div class="car-img">
                     <img src="img/1.png" alt="imagem carro">
                 </div>
@@ -43,65 +43,68 @@
                         Porsche
                     </h2>
                     <p class="description">
-                        The Porsche 911 Turbo S is a high-performance sports car that blends timeless design with
-                        cutting-edge technology. 
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus similique nemo sit, libero ut sed nihil ipsam culpa tempora aliquid corrupti fuga omnis a sint minus autem incidunt atque voluptates.
                     </p>
                     <button class="button-contact">
                         more
                     </button>
-                </div>
-                           <div class="item">
+                </div> <!-- Fechamento correto do .content -->
+            </div> <!-- Fechamento correto do .item -->
+
+            <div class="item"> <!-- second car -->
                 <div class="car-img">
-                    <img src="img/1.png" alt="imagem carro">
+                    <img src="img/2.png" alt="imagem carro">
                 </div>
                 <div class="content">
                     <p class="car-name">
-                        preencher depois
+                        Portofino M
                     </p>
                     <h2 class="car-brand">
-                        Ferrari
+                         Ferrari
                     </h2>
                     <p class="description">
-                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt libero ullam alias provident! Nemo voluptate qui odio sunt et sed voluptatum. Vitae recusandae voluptatum consequuntur molestiae dolor consectetur, explicabo illum. 
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur voluptatum tenetur consequatur iste. At ipsa, soluta ea nihil amet sapiente, vel optio aut non adipisci harum asperiores repellat deleniti reiciendis.
                     </p>
                     <button class="button-contact">
                         more
                     </button>
-                </div>
-                           <div class="item">
+                </div> <!-- Fechamento correto do .content -->
+            </div> <!-- Fechamento correto do .item -->
+
+            <div class="item"> <!-- third car -->
                 <div class="car-img">
-                    <img src="img/1.png" alt="imagem carro">
+                    <img src="img/3.png" alt="imagem carro">
                 </div>
                 <div class="content">
-                    <p class="car-name">
-                        preencher depois
+                     <p class="car-name">
+                        Aventador
                     </p>
                     <h2 class="car-brand">
                         Lamborghini
                     </h2>
                     <p class="description">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto quia, illum reiciendis voluptatum laudantium assumenda, quisquam sequi doloremque et, magnam doloribus dicta maiores minus porro quasi. Ducimus aperiam quidem qui.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid ipsa omnis laudantium necessitatibus veniam ipsam facilis sint non tempora ducimus sed aut veritatis quae facere, magni distinctio modi, aspernatur ut?
                     </p>
                     <button class="button-contact">
                         more
                     </button>
-                </div>
-            </div>
+                </div> <!-- Fechamento correto do .content -->
+            </div> <!-- Fechamento correto do .item -->
         </div>
 
         <div class="arrows">
-            <button><img src="img/arrow.png" alt="left arrow"></button>
-            <button><img src="img/arrow.png" alt="right arrow"></button>
+            <button id="prev"><img src="img/arrow.png" alt="left arrow"></button>
+            <button id="next"><img src="img/arrow.png" alt="right arrow"></button>
         </div>
         <div class="indicators">
             <div class="number">01</div>
             <ul>
-                <li class="active"></li>
-                <li></li>
-                <li></li>
+                <li class="active"></li> <!-- 1 line -->
+                <li></li> <!-- 2 line -->
+                <li></li> <!-- 3 line -->
             </ul>
         </div>
     </section>
+    <script src="./scripts.js"></script>
 </body>
-
 </html>

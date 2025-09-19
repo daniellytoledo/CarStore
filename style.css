@@ -46,6 +46,7 @@ section {
     background-image: radial-gradient(#7f3d9e, #6d00d9); /* radial gradient gives the color a gradiant effect in the background */
     height: 100vh;
     position: relative;
+    
     & .list {
         width: 70vw;
         height: 100%;
@@ -53,20 +54,27 @@ section {
         position: relative;
 
         & .item {
-            position: absolute;
+            position: absolute; /* MANTENHA como absolute - isso é essencial */
             inset: 0;
             overflow: hidden;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+
+            &.active {
+                opacity: 1;
+            }
 
             & .car-img {
                 position: absolute;
-                top: 49%;
+                top: 50%;
                 transform: translateY(-55%); /* translateY centralize in vertical */
                 width: 70%;
+                z-index: 1;
 
-            & img {
-                width: 95%;
-                transform: rotate(-25deg);
-            }
+                & img {
+                    width: 95%;
+                    transform: rotate(-30deg);
+                }
             }
 
             & .content {
@@ -76,10 +84,11 @@ section {
                 height: 100%;
                 display: flex;
                 flex-direction: column;
-                justify-content: center; /* put the content in the end of the screen */
-                align-items: end; /* placing the text on the right */
+                justify-content: center;
+                align-items: end;
                 gap: 20px;
                 font-family: "Special Gothic", sans-serif;
+                z-index: 3; /* Garante que o conteúdo fique acima */
 
                 & .car-brand {
                     font-size: 70px;
@@ -105,13 +114,15 @@ section {
 
                 & .button-contact {
                     border-radius: 30px;
-                    height: 25px; /* altura */
-                    width: 80px; /* largura */
+                    height: 25px;
+                    width: 80px;
                     text-transform: uppercase;
                     border: 1px solid #ffd900;
                     background-color: #febb13;
                     color: #000000;
-                    cursor: pointer;
+                    cursor: pointer !important;
+                    position: relative;
+                    z-index: 10; /* Garante que o botão fique acima de tudo */
                 }      
             }
         }
@@ -123,6 +134,8 @@ section {
             width: 100%;
             top: 50%;
             border-top: 1px solid #fff;
+            z-index: 1; /* Coloca atrás do conteúdo */
+            pointer-events: none; /* Permite clicar através dele */
         }
     }
 
@@ -131,13 +144,14 @@ section {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -25px); /* instead of writing 2 lines for each arrow, we can just set both of them */
+        transform: translate(-50%, -25px);
         display: flex;
         justify-content: space-between;
+        z-index: 5;
 
-        & button:nth-child(1) { /* there's 2 button inside the arrows html, so with this we can choose which one we want */
+        & button:nth-child(1) {
             & img {
-                transform: scale(-1); /* inverted the img(arrow) */
+                transform: scale(-1);
             }
         }
 
@@ -148,6 +162,8 @@ section {
             border-radius: 50%;
             border: none;
             cursor: pointer;
+            z-index: 5;
+            
             & img {
                 width: 30px;
                 margin-top: 4px;
@@ -162,18 +178,19 @@ section {
 
     .indicators {
         position: absolute;
-        top: 50%;
+        top: 55%;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translateX(-38%);
         height: 220px;
         width: 90vw;
         display: flex;
         flex-direction: column;
         justify-content: end;
-        gap: 15px;
+        gap: 5px;
+        z-index: 5;
         
         & .number {
-            font-size: 3em;
+            font-size: 2.5em;
         }
 
         & ul {
@@ -201,6 +218,7 @@ section {
         &.item {
             transform: translateX(100vw);
             transition: 0.5s;
+            opacity: 0;
 
             & .car-img{
                 & img{
@@ -209,12 +227,14 @@ section {
                     transition-delay: 0.3s;
                 }
             }
+
             & .content{
 
                 & .car-name, .car-brand, .description, .button-contact{
                     transform: translateX(200px);
                     transition: 0.7s;
                     transition-delay: 0.3s;
+                    opacity: 0;
                 }
 
                 & .car-brand{
@@ -227,6 +247,26 @@ section {
 
                 & .button-contact{
                     transition-delay: 0.9s;
+                }
+            }
+        }
+
+        & .active{
+            transform: translateX(0);
+            transition: 0.5s;
+            opacity: 1;
+
+            & .car-img{
+                & img{
+                    transform: rotate(-25deg);
+                }
+            }
+
+            & .content{
+
+                & .car-name, .car-brand, .description, .button-contact{
+                    transform: translateX(0);
+                    opacity: 1;
                 }
             }
         }
