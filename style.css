@@ -134,8 +134,7 @@ section {
             width: 100%;
             top: 50%;
             border-top: 1px solid #fff;
-            z-index: 1; /* Coloca atrás do conteúdo */
-            pointer-events: none; /* Permite clicar através dele */
+            z-index: 0; /* Coloca atrás do conteúdo */
         }
     }
 
@@ -178,8 +177,8 @@ section {
 
     .indicators {
         position: absolute;
-        top: 55%;
-        left: 50%;
+        top: 45%;
+        left: 40%;
         transform: translateX(-38%);
         height: 220px;
         width: 90vw;

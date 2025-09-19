@@ -12,3 +12,4 @@ nextButton.onclick = () => {
 prevButton.onclick = () => {
     console.log("Botão prev")
 }
+
